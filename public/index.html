@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>AI Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <section id="screen-onboarding" class="screen screen-onboarding">
+      <div class="notch-spacer"></div>
+      <div class="onboarding-header">
+        <div class="eyebrow">Build your personal AI Companion</div>
+        <h1>Creating your replica has never been this easy</h1>
+      </div>
+
+      <div class="card-stack" aria-hidden="true">
+        <div class="card card-top">
+          <div class="avatar"></div>
+          <div class="card-title">Samantha Blake</div>
+          <div class="card-subtitle">Creative Companion</div>
+        </div>
+        <div class="card card-mid"></div>
+        <div class="card card-bottom"></div>
+      </div>
+
+      <div class="cta-wrap">
+        <button id="btn-create" class="btn btn-primary">Create Replica</button>
+        <button id="btn-back" class="btn btn-ghost">Back</button>
+      </div>
+    </section>
+
+    <section id="screen-chat" class="screen screen-chat" hidden>
+      <header class="appbar">
+        <button id="btn-exit" class="icon-btn" aria-label="Back">✕</button>
+        <div class="title">AI Companion</div>
+        <div class="spacer"></div>
+      </header>
+
+      <main id="messages" class="messages" aria-live="polite"></main>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <textarea
+          id="input"
+          class="input"
+          rows="1"
+          placeholder="Type a message..."
+          enterkeyhint="send"
+        ></textarea>
+        <button id="sendBtn" class="btn-send" type="submit" aria-label="Send">➤</button>
+      </form>
+    </section>
+
+    <div id="loadingOverlay" class="loading-overlay" hidden>
+      <div class="overlay-card">
+        <button id="overlayClose" class="overlay-close" aria-label="Close">✕</button>
+        <div class="overlay-title">Looking into that for you right now.</div>
+        <div class="overlay-subtitle">Give me a sec!</div>
+
+        <div class="orb">
+          <div class="orb-core"></div>
+          <div class="orb-ring"></div>
+          <div class="orb-glow"></div>
+        </div>
+
+        <button id="btnStop" class="btn btn-secondary">Stop</button>
+        <div class="press-hint">Press button to "Stop"</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
